@@ -1,6 +1,6 @@
 # WhatsApp Sender
 
-WhatsApp Sender is an unofficial API to send bulk messages in whatsapp. It's not recommended using it in your company or for marketing purpose.
+WhatsApp Sender is an unofficial API to send bulk messages in Whatsapp. It's not recommended using it in your company or for marketing purpose.
 
 ## First usage and configuration
 For the first usage, wait for the automatic download of the .local-chromium folder in your project root. Without this folder the package will not work,this is because this package is based on [puppeteer](https://github.com/xvrh/puppeteer-dart).
@@ -70,11 +70,11 @@ After you have scanned the code, you can start the sending campaign.
 The static variable  ```WhatsAppSender.status``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
 
 Possible states of ```WhatsAppSender.status``` are:
-1. ``` WhatsAppSenderStatusMessage.initialize``` during WhatsApp initialization 
-2. ``` WhatsAppSenderStatusMessage.scanQrCode``` during qr code scanning
-3. ``` WhatsAppSenderStatusMessage.sending``` during sending
-4. ``` WhatsAppSenderStatusMessage.done``` if seding is end
-5. ``` WhatsAppSenderStatusMessage.qrCodeExpirated``` if qrcode to scan is expirated
+- ``` WhatsAppSenderStatusMessage.initialize``` during WhatsApp initialization 
+- ``` WhatsAppSenderStatusMessage.scanQrCode``` during qr code scanning
+- ``` WhatsAppSenderStatusMessage.sending``` during sending
+- ``` WhatsAppSenderStatusMessage.done``` if seding is end
+- ``` WhatsAppSenderStatusMessage.qrCodeExpirated``` if qrcode to scan is expirated
 
 
 ### Listen the number of success sendings
