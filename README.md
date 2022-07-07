@@ -39,9 +39,7 @@ For render qrcode to scan use package like [pretty_qr_code](https://pub.dev/pack
 
 ```dart
    import 'package:pretty_qr_code/pretty_qr_code.dart';
-
    ...
-
    ValueListenableBuilder<String>(
      valueListenable: WhatsAppSender.qrCode,
      builder: (context, value, widget) {
