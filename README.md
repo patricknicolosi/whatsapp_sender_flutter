@@ -12,13 +12,13 @@ In the `pubspec.yaml` of your flutter project, add the following dependency:
 ```yaml
 dependencies:
   ...
-  whatsapp_sender: ^0.0.1
+  whatsapp_sender_flutter: ^0.0.1
 ```
 
 Import it:
 
 ```dart
-import 'package:whatsapp_sender/whatsapp_sender.dart';
+import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter.dart';
 ```
 
 ## Configuration
