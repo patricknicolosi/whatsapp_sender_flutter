@@ -1,6 +1,10 @@
 # WhatsApp Sender
 
+![af](https://user-images.githubusercontent.com/23001470/177776109-a9eb8f52-6b4e-4c21-83fe-a70f59b694a3.png)
+
 WhatsApp Sender is an unofficial API to send bulk messages in Whatsapp. It's not recommended using it in your company or for marketing purpose.
+
+<a href="https://www.buymeacoffee.com/patrickNicT" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Book" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 ## First usage and configuration
 For the first usage, wait for the automatic download of the .local-chromium folder in your project root. Without this folder the package will not work,this is because this package is based on [puppeteer](https://github.com/xvrh/puppeteer-dart).
