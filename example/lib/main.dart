@@ -67,9 +67,9 @@ class _MyAppState extends State<MyApp> {
           );
           await WhatsAppSender.sendTo(
             phones: [
-              "+393271220065",
-              "+393271220065",
-              "+393271220065",
+              "+391111111111",
+              "+391111111111",
+              "+391111111111",
             ],
             message: "Hello",
           );
