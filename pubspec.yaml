@@ -1,6 +1,6 @@
 name: whatsapp_sender
 description: WhatsApp Sender is an unofficial API to send bulk messages in whatsapp
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/patricknicolosi/whatsapp_sender
 
 environment:
