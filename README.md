@@ -2,7 +2,7 @@
 
 WhatsApp Sender is an unofficial API to send bulk messages in whatsapp. It's not recommended using it in your company or for marketing purpose.
 
-## First usage
+## First usage and configuration
 For the first usage, wait for the automatic download of the .local-chromium folder in your project root. Without this folder the package will not work,this is because this package is based on [puppeteer ](https://github.com/xvrh/puppeteer-dart).
 
 ## Basic usage
