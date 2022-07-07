@@ -6,8 +6,23 @@ WhatsApp Sender is an unofficial API to send bulk messages in Whatsapp. It's not
 
 <a href="https://www.buymeacoffee.com/patrickNicT" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Book" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
+## Getting Started
+In the `pubspec.yaml` of your flutter project, add the following dependency:
+
+```yaml
+dependencies:
+  ...
+  whatsapp_sender: ^0.0.1
+```
+
+Import it:
+
+```dart
+import 'package:whatsapp_sender/whatsapp_sender.dart';
+```
+
 ## First usage and configuration
-For the first usage, wait for the automatic download of the .local-chromium folder in your project root. Without this folder the package will not work,this is because this package is based on [puppeteer](https://github.com/xvrh/puppeteer-dart).
+For the first usage, wait for the automatic download of the ```.local-chromium``` folder in your project root. Without this folder the package will not work,this is because this package is based on [puppeteer](https://github.com/xvrh/puppeteer-dart).
 
 **Problem** If the automatic download doesn't work you can copy the folder, which you can download from [here](https://drive.google.com/drive/folders/1oA9EO6pYiAlH6RTn_-fb6epwQ6Lm9y9a?usp=sharing), manually in your project root.
 
