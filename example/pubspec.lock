@@ -240,7 +240,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
-  whatsapp_sender:
+  whatsapp_sender_flutter:
     dependency: "direct main"
     description:
       path: ".."

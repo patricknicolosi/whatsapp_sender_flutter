@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
-import 'package:whatsapp_sender/whatsapp_sender.dart';
+import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter.dart';
 
 void main() {
   runApp(

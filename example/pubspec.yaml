@@ -35,7 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   pretty_qr_code: ^2.0.2
-  whatsapp_sender:
+  whatsapp_sender_flutter:
     path: ../
 
 dev_dependencies:
