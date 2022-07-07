@@ -2,7 +2,6 @@
 
 WhatsApp Sender is an unofficial API to send bulk messages in whatsapp. It's not recommended using it in your company or for marketing purpose.
 
-![ezgif-2-1f2f65591a](https://user-images.githubusercontent.com/23001470/177731675-097a69d6-aab0-47d8-bf4a-efa663651ffc.gif)
 
 ## Basic usage
 
