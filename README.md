@@ -12,7 +12,7 @@ In the `pubspec.yaml` of your flutter project, add the following dependency:
 ```yaml
 dependencies:
   ...
-  whatsapp_sender_flutter: ^0.0.4
+  whatsapp_sender_flutter: ^0.0.5
 ```
 
 Import it:
@@ -31,7 +31,8 @@ If automatic download doent't start
   - **Windows** download from [here](https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/1011831/chrome-win.zip)
   - **Linux** download from [here](https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/1011831/chrome-linux.zip)
 
-2. Extract and move the ```.local-chromium``` folder manually in your project root
+2. Extract .zip file and move content in the ```.local-chromium``` (create it if it doesn't exist
+) folder manually in your project root.
 
 ## Basic usage
 
