@@ -32,7 +32,6 @@ If automatic download doent't start
   - **Linux** Dowload .zip file from [here](https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/1011831/chrome-linux.zip)
 
 2. Extract and move the ```.local-chromium``` folder manually in your project root
-ß
 
 ## Basic usage
 
