@@ -24,7 +24,15 @@ import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter.dart';
 ## Configuration
 For the first usage, wait for the automatic download of the ```.local-chromium``` folder in your project root. Without this folder the package will not work,this is because this package is based on [puppeteer](https://github.com/xvrh/puppeteer-dart).
 
-**Problem** If the automatic download doesn't work you can copy the folder, which you can download from [here](https://drive.google.com/drive/folders/1oA9EO6pYiAlH6RTn_-fb6epwQ6Lm9y9a?usp=sharing), manually in your project root.
+If automatic download doent't start
+
+1. Download .zip file
+  - **Mac** [here](https://storage.googleapis.com/chromium-browser-snapshots/Mac/1011831/chrome-mac.zip)
+  - **Windows** Dowload .zip file from [here](https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/1011831/chrome-win.zip)
+  - **Linux** Dowload .zip file from [here](https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/1011831/chrome-linux.zip)
+
+2. Extract and move the ```.local-chromium``` folder manually in your project root
+ß
 
 ## Basic usage
 
