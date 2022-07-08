@@ -27,9 +27,9 @@ For the first usage, wait for the automatic download of the ```.local-chromium``
 If automatic download doent't start
 
 1. Download .zip file
-  - **Mac** [here](https://storage.googleapis.com/chromium-browser-snapshots/Mac/1011831/chrome-mac.zip)
-  - **Windows** Dowload .zip file from [here](https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/1011831/chrome-win.zip)
-  - **Linux** Dowload .zip file from [here](https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/1011831/chrome-linux.zip)
+  - **Mac** download from [here](https://storage.googleapis.com/chromium-browser-snapshots/Mac/1011831/chrome-mac.zip)
+  - **Windows** download from [here](https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/1011831/chrome-win.zip)
+  - **Linux** download from [here](https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/1011831/chrome-linux.zip)
 
 2. Extract and move the ```.local-chromium``` folder manually in your project root
 
