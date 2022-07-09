@@ -1,8 +1,6 @@
-# WhatsApp Sender
+# WhatsApp Sender Flutter
 
-![af](https://user-images.githubusercontent.com/23001470/177776109-a9eb8f52-6b4e-4c21-83fe-a70f59b694a3.png)
-
-WhatsApp Sender is an unofficial API for Flutter to send bulk messages in Whatsapp. It's not recommended using it in your company or for marketing purpose.
+WhatsApp Sender Flutter is an unofficial API for Flutter to send bulk messages in Whatsapp. It's not recommended using it in your company or for marketing purpose.
 
 <a href="https://www.buymeacoffee.com/patrickNicT" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Book" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
@@ -49,7 +47,7 @@ For render qrcode to scan use package like [pretty_qr_code](https://pub.dev/pack
    import 'package:pretty_qr_code/pretty_qr_code.dart';
    ...
    ValueListenableBuilder<String>(
-     valueListenable: WhatsAppSender.qrCode,
+     valueListenable: WhatsAppSenderFlutter.qrCode,
      builder: (context, value, widget) {
               return value.isEmpty 
                      ? const SizedBox()
@@ -63,7 +61,7 @@ For render qrcode to scan use package like [pretty_qr_code](https://pub.dev/pack
 ```
 
 
-The static variable  ```WhatsAppSender.qrCode``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
+The static variable  ```WhatsAppSenderFlutter.qrCode``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
 
 
 
@@ -74,7 +72,7 @@ After you have scanned the code, you can start the sending campaign.
 
 
 ```dart
-   await WhatsAppSender.sendTo(
+   await WhatsAppSenderFlutter.sendTo(
          phones: [ "+391111111", "+391111111", "+391111111"],
          message: "Hello",
    );
@@ -84,7 +82,7 @@ After you have scanned the code, you can start the sending campaign.
 ### Listen sending status
 ```dart
    ValueListenableBuilder<String>(
-     valueListenable: WhatsAppSender.status,
+     valueListenable: WhatsAppSenderFlutter.status,
      builder: (context, value, widget) {
                 return Text(value);
               },
@@ -92,45 +90,45 @@ After you have scanned the code, you can start the sending campaign.
 ```
 
 
-The static variable  ```WhatsAppSender.status``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
+The static variable  ```WhatsAppSenderFlutter.status``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
 
-Possible states of ```WhatsAppSender.status``` are:
-- ``` WhatsAppSenderStatusMessage.initialize``` during WhatsApp initialization 
-- ``` WhatsAppSenderStatusMessage.scanQrCode``` during qr code scanning
-- ``` WhatsAppSenderStatusMessage.sending``` during sending
-- ``` WhatsAppSenderStatusMessage.done``` if seding is end
-- ``` WhatsAppSenderStatusMessage.qrCodeExpirated``` if qrcode to scan is expirated
+Possible states of ```WhatsAppSenderFlutter.status``` are:
+- ``` WhatsAppSenderFlutterStatusMessage.initialize``` during WhatsApp initialization 
+- ``` WhatsAppSenderFlutterStatusMessage.scanQrCode``` during qr code scanning
+- ``` WhatsAppSenderFlutterStatusMessage.sending``` during sending
+- ``` WhatsAppSenderFlutterStatusMessage.done``` if seding is end
+- ``` WhatsAppSenderFlutterStatusMessage.qrCodeExpirated``` if qrcode to scan is expirated
 
 
 ### Listen the number of success sendings
 ```dart
    ValueListenableBuilder<String>(
-     valueListenable: WhatsAppSender.success,
+     valueListenable: WhatsAppSenderFlutter.success,
      builder: (context, value, widget) {
                 return Text(value.toString());
               },
   ),
 ```
 
-The static variable  ```WhatsAppSender.success``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
+The static variable  ```WhatsAppSenderFlutter.success``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
 
 
 ### Listen the number of fails sendings
 ```dart
    ValueListenableBuilder<String>(
-     valueListenable: WhatsAppSender.fails,
+     valueListenable: WhatsAppSenderFlutter.fails,
      builder: (context, value, widget) {
                 return Text(value.toString());
               },
   ),
 ```
 
-The static variable  ```WhatsAppSender.fails``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
+The static variable  ```WhatsAppSenderFlutter.fails``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
 
 ### Save your session
 
 ```dart
-   await WhatsAppSender.sendTo(
+   await WhatsAppSenderFlutter.sendTo(
          phones: [ "+391111111", "+391111111", "+391111111"],
          message: "Hello",
          savedSessionDir: "./userData"
@@ -180,7 +178,7 @@ class _MyAppState extends State<MyApp> {
                 child: Column(
                   children: [
                     ValueListenableBuilder<String>(
-                      valueListenable: WhatsAppSender.qrCode,
+                      valueListenable: WhatsAppSenderFlutter.qrCode,
                       builder: (context, value, widget) {
                         return value.isEmpty
                             ? const SizedBox()
@@ -192,19 +190,19 @@ class _MyAppState extends State<MyApp> {
                       },
                     ),
                     ValueListenableBuilder<String>(
-                      valueListenable: WhatsAppSender.status,
+                      valueListenable: WhatsAppSenderFlutter.status,
                       builder: (context, value, widget) {
                         return Text(value);
                       },
                     ),
                     ValueListenableBuilder<int>(
-                      valueListenable: WhatsAppSender.success,
+                      valueListenable: WhatsAppSenderFlutter.success,
                       builder: (context, value, widget) {
                         return Text("$value success");
                       },
                     ),
                     ValueListenableBuilder<int>(
-                      valueListenable: WhatsAppSender.fails,
+                      valueListenable: WhatsAppSenderFlutter.fails,
                       builder: (context, value, widget) {
                         return Text("$value fails");
                       },
@@ -214,7 +212,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
           );
-          await WhatsAppSender.sendTo(
+          await WhatsAppSenderFlutter.sendTo(
             phones: [
               "+391111111111",
               "+391111111111",
