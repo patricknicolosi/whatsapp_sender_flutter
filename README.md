@@ -10,7 +10,7 @@ In the `pubspec.yaml` of your flutter project, add the following dependency:
 ```yaml
 dependencies:
   ...
-  whatsapp_sender_flutter: ^0.0.5
+  whatsapp_sender_flutter: latest
 ```
 
 Import it:

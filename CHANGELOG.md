@@ -18,3 +18,6 @@ Updated README.md
 
 ## 0.0.6
 Update main class from WhatsAppSender to WhatsAppSenderFlutter
+
+## 0.0.7
+Updated README.md
