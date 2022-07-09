@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
                 child: Column(
                   children: [
                     ValueListenableBuilder<String>(
-                      valueListenable: WhatsAppSender.qrCode,
+                      valueListenable: WhatsAppSenderFlutter.qrCode,
                       builder: (context, value, widget) {
                         return value.isEmpty
                             ? const SizedBox()
@@ -43,19 +43,19 @@ class _MyAppState extends State<MyApp> {
                       },
                     ),
                     ValueListenableBuilder<String>(
-                      valueListenable: WhatsAppSender.status,
+                      valueListenable: WhatsAppSenderFlutter.status,
                       builder: (context, value, widget) {
                         return Text(value);
                       },
                     ),
                     ValueListenableBuilder<int>(
-                      valueListenable: WhatsAppSender.success,
+                      valueListenable: WhatsAppSenderFlutter.success,
                       builder: (context, value, widget) {
                         return Text("$value success");
                       },
                     ),
                     ValueListenableBuilder<int>(
-                      valueListenable: WhatsAppSender.fails,
+                      valueListenable: WhatsAppSenderFlutter.fails,
                       builder: (context, value, widget) {
                         return Text("$value fails");
                       },
@@ -65,7 +65,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
           );
-          await WhatsAppSender.sendTo(
+          await WhatsAppSenderFlutter.sendTo(
             phones: [
               "+391111111111",
               "+391111111111",
