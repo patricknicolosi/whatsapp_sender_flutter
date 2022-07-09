@@ -21,3 +21,6 @@ Update main class from WhatsAppSender to WhatsAppSenderFlutter
 
 ## 0.0.7
 Updated README.md
+
+## 0.0.8
+Fixed example
