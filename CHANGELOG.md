@@ -39,3 +39,6 @@ Bug fix
 
 ## 0.1.3
 Bug fix
+
+## 0.1.4
+Reformat code
