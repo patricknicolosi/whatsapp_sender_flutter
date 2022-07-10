@@ -45,9 +45,10 @@ For render qrcode to scan use package like [pretty_qr_code](https://pub.dev/pack
 
 ```dart
    import 'package:pretty_qr_code/pretty_qr_code.dart';
+   WhatsAppSenderFlutter whatsAppSenderFlutter = WhatsAppSenderFlutter();
    ...
    ValueListenableBuilder<String>(
-     valueListenable: WhatsAppSenderFlutter.qrCode,
+     valueListenable: whatsAppSenderFlutter.qrCode,
      builder: (context, value, widget) {
               return value.isEmpty 
                      ? const SizedBox()
@@ -61,7 +62,7 @@ For render qrcode to scan use package like [pretty_qr_code](https://pub.dev/pack
 ```
 
 
-The static variable  ```WhatsAppSenderFlutter.qrCode``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
+The static variable  ```whatsAppSenderFlutter.qrCode``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
 
 
 
@@ -72,7 +73,9 @@ After you have scanned the code, you can start the sending campaign.
 
 
 ```dart
-   await WhatsAppSenderFlutter.sendTo(
+   WhatsAppSenderFlutter whatsAppSenderFlutter = WhatsAppSenderFlutter();
+   ...
+   await whatsAppSenderFlutter.sendTo(
          phones: [ "+391111111", "+391111111", "+391111111"],
          message: "Hello",
    );
@@ -81,8 +84,10 @@ After you have scanned the code, you can start the sending campaign.
 ## Advanced usage
 ### Listen sending status
 ```dart
+   WhatsAppSenderFlutter whatsAppSenderFlutter = WhatsAppSenderFlutter();
+   ...
    ValueListenableBuilder<String>(
-     valueListenable: WhatsAppSenderFlutter.status,
+     valueListenable: whatsAppSenderFlutter.status,
      builder: (context, value, widget) {
                 return Text(value);
               },
@@ -90,7 +95,7 @@ After you have scanned the code, you can start the sending campaign.
 ```
 
 
-The static variable  ```WhatsAppSenderFlutter.status``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
+The static variable  ```whatsAppSenderFlutter.status``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
 
 Possible states of ```WhatsAppSenderFlutter.status``` are:
 - ``` WhatsAppSenderFlutterStatusMessage.initialize``` during WhatsApp initialization 
@@ -102,33 +107,39 @@ Possible states of ```WhatsAppSenderFlutter.status``` are:
 
 ### Listen the number of success sendings
 ```dart
+   WhatsAppSenderFlutter whatsAppSenderFlutter = WhatsAppSenderFlutter();
+   ...
    ValueListenableBuilder<String>(
-     valueListenable: WhatsAppSenderFlutter.success,
+     valueListenable: whatsAppSenderFlutter.success,
      builder: (context, value, widget) {
                 return Text(value.toString());
               },
   ),
 ```
 
-The static variable  ```WhatsAppSenderFlutter.success``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
+The static variable  ```whatsAppSenderFlutter.success``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
 
 
 ### Listen the number of fails sendings
 ```dart
+   WhatsAppSenderFlutter whatsAppSenderFlutter = WhatsAppSenderFlutter();
+   ...
    ValueListenableBuilder<String>(
-     valueListenable: WhatsAppSenderFlutter.fails,
+     valueListenable: whatsAppSenderFlutter.fails,
      builder: (context, value, widget) {
                 return Text(value.toString());
               },
   ),
 ```
 
-The static variable  ```WhatsAppSenderFlutter.fails``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
+The static variable  ```whatsAppSenderFlutter.fails``` is a ```ValueNotifier```. You can use ```ValueListenableBuilder``` to listen changes.
 
 ### Save your session
 
 ```dart
-   await WhatsAppSenderFlutter.sendTo(
+   WhatsAppSenderFlutter whatsAppSenderFlutter = WhatsAppSenderFlutter();
+   ...
+   await whatsAppSenderFlutter.sendTo(
          phones: [ "+391111111", "+391111111", "+391111111"],
          message: "Hello",
          savedSessionDir: "./userData"
@@ -165,6 +176,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  WhatsAppSenderFlutter whatsAppSenderFlutter = WhatsAppSenderFlutter();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -178,7 +191,7 @@ class _MyAppState extends State<MyApp> {
                 child: Column(
                   children: [
                     ValueListenableBuilder<String>(
-                      valueListenable: WhatsAppSenderFlutter.qrCode,
+                      valueListenable: whatsAppSenderFlutter.qrCode,
                       builder: (context, value, widget) {
                         return value.isEmpty
                             ? const SizedBox()
@@ -190,19 +203,19 @@ class _MyAppState extends State<MyApp> {
                       },
                     ),
                     ValueListenableBuilder<String>(
-                      valueListenable: WhatsAppSenderFlutter.status,
+                      valueListenable: whatsAppSenderFlutter.status,
                       builder: (context, value, widget) {
                         return Text(value);
                       },
                     ),
                     ValueListenableBuilder<int>(
-                      valueListenable: WhatsAppSenderFlutter.success,
+                      valueListenable: whatsAppSenderFlutter.success,
                       builder: (context, value, widget) {
                         return Text("$value success");
                       },
                     ),
                     ValueListenableBuilder<int>(
-                      valueListenable: WhatsAppSenderFlutter.fails,
+                      valueListenable: whatsAppSenderFlutter.fails,
                       builder: (context, value, widget) {
                         return Text("$value fails");
                       },
@@ -212,7 +225,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
           );
-          await WhatsAppSenderFlutter.sendTo(
+          await whatsAppSenderFlutter.sendTo(
             phones: [
               "+391111111111",
               "+391111111111",

@@ -18,6 +18,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  WhatsAppSenderFlutter whatsAppSenderFlutter = WhatsAppSenderFlutter();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +33,7 @@ class _MyAppState extends State<MyApp> {
                 child: Column(
                   children: [
                     ValueListenableBuilder<String>(
-                      valueListenable: WhatsAppSenderFlutter.qrCode,
+                      valueListenable: whatsAppSenderFlutter.qrCode,
                       builder: (context, value, widget) {
                         return value.isEmpty
                             ? const SizedBox()
@@ -43,19 +45,19 @@ class _MyAppState extends State<MyApp> {
                       },
                     ),
                     ValueListenableBuilder<String>(
-                      valueListenable: WhatsAppSenderFlutter.status,
+                      valueListenable: whatsAppSenderFlutter.status,
                       builder: (context, value, widget) {
                         return Text(value);
                       },
                     ),
                     ValueListenableBuilder<int>(
-                      valueListenable: WhatsAppSenderFlutter.success,
+                      valueListenable: whatsAppSenderFlutter.success,
                       builder: (context, value, widget) {
                         return Text("$value success");
                       },
                     ),
                     ValueListenableBuilder<int>(
-                      valueListenable: WhatsAppSenderFlutter.fails,
+                      valueListenable: whatsAppSenderFlutter.fails,
                       builder: (context, value, widget) {
                         return Text("$value fails");
                       },
@@ -65,7 +67,8 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
           );
-          await WhatsAppSenderFlutter.sendTo(
+          whatsAppSenderFlutter.fails.value = 0;
+          await whatsAppSenderFlutter.sendTo(
             phones: [
               "+391111111111",
               "+391111111111",

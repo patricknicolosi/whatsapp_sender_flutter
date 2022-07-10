@@ -1,6 +1,6 @@
 name: whatsapp_sender_flutter
 description: WhatsApp Sender Flutter is an unofficial API for Flutter to send bulk messages in Whatsapp
-version: 0.0.8
+version: 0.0.9
 homepage: https://github.com/patricknicolosi/whatsapp_sender_flutter
 
 environment:

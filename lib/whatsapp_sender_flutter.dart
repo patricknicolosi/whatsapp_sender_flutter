@@ -6,18 +6,17 @@ import 'package:flutter/material.dart' as material;
 import 'package:puppeteer/puppeteer.dart';
 
 class WhatsAppSenderFlutter {
-  static late Browser _browser;
-  static late Page _page;
+  late Browser _browser;
+  late Page _page;
 
-  static material.ValueNotifier<String> qrCode =
-      material.ValueNotifier<String>("");
-  static material.ValueNotifier<String> status = material.ValueNotifier<String>(
+  material.ValueNotifier<String> qrCode = material.ValueNotifier<String>("");
+  final material.ValueNotifier<String> status = material.ValueNotifier<String>(
       WhatsAppSenderFlutterStatusMessage.initializing);
 
-  static material.ValueNotifier<int> success = material.ValueNotifier<int>(0);
-  static material.ValueNotifier<int> fails = material.ValueNotifier<int>(0);
+  material.ValueNotifier<int> success = material.ValueNotifier<int>(0);
+  material.ValueNotifier<int> fails = material.ValueNotifier<int>(0);
 
-  static Future sendTo(
+  Future sendTo(
       {required List<String> phones,
       required String message,
       String? savedSessionDir}) async {
@@ -64,18 +63,18 @@ class WhatsAppSenderFlutter {
     await close();
   }
 
-  static Future close() async {
+  Future close() async {
     await _browser.close();
   }
 
-  static Future<void> _waitChatScreen() async {
+  Future<void> _waitChatScreen() async {
     await _page.waitForSelector(
       '.zaKsw',
       timeout: const Duration(milliseconds: 60000),
     );
   }
 
-  static Future<void> _readQrcode() async {
+  Future<void> _readQrcode() async {
     //Wait code rendering
     await Future.delayed(const Duration(seconds: 3));
 
@@ -93,7 +92,7 @@ class WhatsAppSenderFlutter {
     }
   }
 
-  static Future<void> _openWhatsAppWeb(String? savedSessionDir) async {
+  Future<void> _openWhatsAppWeb(String? savedSessionDir) async {
     _initializeStatusVariables();
     _browser = await puppeteer.launch(
       headless: true,
@@ -109,7 +108,7 @@ class WhatsAppSenderFlutter {
     await _page.goto('http://web.whatsapp.com');
   }
 
-  static _initializeStatusVariables() {
+  _initializeStatusVariables() {
     success.value = 0;
     fails.value = 0;
     status.value = WhatsAppSenderFlutterStatusMessage.initializing;
@@ -118,9 +117,9 @@ class WhatsAppSenderFlutter {
 }
 
 class WhatsAppSenderFlutterStatusMessage {
-  static String initializing = "initializing";
-  static String scanQrCode = "scan qr code";
-  static String sending = "sending";
-  static String done = "done";
-  static String qrCodeExpirated = "qr code expirated";
+  static const String initializing = "initializing";
+  static const String scanQrCode = "scan qr code";
+  static const String sending = "sending";
+  static const String done = "done";
+  static const String qrCodeExpirated = "qr code expirated";
 }
