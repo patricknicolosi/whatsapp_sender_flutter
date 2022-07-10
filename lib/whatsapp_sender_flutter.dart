@@ -9,12 +9,13 @@ class WhatsAppSenderFlutter {
   late Browser _browser;
   late Page _page;
 
-  material.ValueNotifier<String> qrCode = material.ValueNotifier<String>("");
+  final material.ValueNotifier<String> qrCode =
+      material.ValueNotifier<String>("");
   final material.ValueNotifier<String> status = material.ValueNotifier<String>(
       WhatsAppSenderFlutterStatusMessage.initializing);
 
-  material.ValueNotifier<int> success = material.ValueNotifier<int>(0);
-  material.ValueNotifier<int> fails = material.ValueNotifier<int>(0);
+  final material.ValueNotifier<int> success = material.ValueNotifier<int>(0);
+  final material.ValueNotifier<int> fails = material.ValueNotifier<int>(0);
 
   Future sendTo(
       {required List<String> phones,
@@ -78,7 +79,6 @@ class WhatsAppSenderFlutter {
     //Wait code rendering
     await Future.delayed(const Duration(seconds: 3));
 
-    //Read qrCode
     try {
       await _page
           .evaluate(
@@ -93,26 +93,17 @@ class WhatsAppSenderFlutter {
   }
 
   Future<void> _openWhatsAppWeb(String? savedSessionDir) async {
-    _initializeStatusVariables();
     _browser = await puppeteer.launch(
       headless: true,
       noSandboxFlag: true,
       args: ['--disable-setuid-sandbox'],
       userDataDir: savedSessionDir,
     );
-
     _page = await _browser.newPage();
     const userAgent =
         'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36';
     await _page.setUserAgent(userAgent);
     await _page.goto('http://web.whatsapp.com');
-  }
-
-  _initializeStatusVariables() {
-    success.value = 0;
-    fails.value = 0;
-    status.value = WhatsAppSenderFlutterStatusMessage.initializing;
-    qrCode.value = "";
   }
 }
 

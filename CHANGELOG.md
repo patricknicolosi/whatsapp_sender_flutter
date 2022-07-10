@@ -27,3 +27,6 @@ Fixed example
 
 ## 0.0.9
 Added multi session support
+
+## 0.1.0
+Bug fix
