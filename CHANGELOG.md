@@ -36,3 +36,6 @@ Reformat library
 
 ## 0.1.2
 Bug fix
+
+## 0.1.3
+Bug fix

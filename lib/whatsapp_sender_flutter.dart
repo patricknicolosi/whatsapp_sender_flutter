@@ -21,6 +21,7 @@ class WhatsAppSenderFlutter {
       {required List<String> phones,
       required String message,
       String? savedSessionDir}) async {
+    _initializingStatusVariables();
     await _openWhatsAppWeb(savedSessionDir);
     await _readQrcode();
     await _waitChatScreen(savedSessionDir);
@@ -29,7 +30,6 @@ class WhatsAppSenderFlutter {
     }
     status.value = WhatsAppSenderFlutterStatusMessage.done;
     await close();
-    _initializingStatusVariables();
   }
 
   Future close() async {
@@ -117,14 +117,13 @@ class WhatsAppSenderFlutter {
       await _page.setUserAgent(userAgent);
       await _page.goto('http://web.whatsapp.com');
     } catch (e) {
-      status.value = WhatsAppSenderFlutterStatusMessage.errorOnLaunch;
+      log(e.toString());
     }
   }
 }
 
 class WhatsAppSenderFlutterStatusMessage {
   static const String initializing = "initializing";
-  static const String errorOnLaunch = "error on launch";
   static const String scanQrCode = "scan qr code";
   static const String sending = "sending";
   static const String done = "done";
