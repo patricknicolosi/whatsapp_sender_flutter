@@ -42,3 +42,6 @@ Bug fix
 
 ## 0.1.4
 Reformat code
+
+## 0.1.5
+Improved the security of some class attributes

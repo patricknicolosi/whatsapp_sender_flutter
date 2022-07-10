@@ -9,13 +9,13 @@ class WhatsAppSenderFlutter {
   late Browser _browser;
   late Page _page;
 
-  final material.ValueNotifier<String> qrCode =
+  final material.ValueNotifier<String> _qrCode =
       material.ValueNotifier<String>("");
-  final material.ValueNotifier<String> status = material.ValueNotifier<String>(
+  final material.ValueNotifier<String> _status = material.ValueNotifier<String>(
       WhatsAppSenderFlutterStatusMessage.initializing);
 
-  final material.ValueNotifier<int> success = material.ValueNotifier<int>(0);
-  final material.ValueNotifier<int> fails = material.ValueNotifier<int>(0);
+  final material.ValueNotifier<int> _success = material.ValueNotifier<int>(0);
+  final material.ValueNotifier<int> _fails = material.ValueNotifier<int>(0);
 
   Future send(
       {required List<String> phones,
@@ -25,7 +25,7 @@ class WhatsAppSenderFlutter {
     try {
       await _openWhatsAppWeb(savedSessionDir);
     } catch (e) {
-      status.value = WhatsAppSenderFlutterStatusMessage.errorOnLaunch;
+      _status.value = WhatsAppSenderFlutterStatusMessage.errorOnLaunch;
       await close();
       return;
     }
@@ -38,21 +38,21 @@ class WhatsAppSenderFlutter {
       await _waitChatScreen();
     } catch (e) {
       if (savedSessionDir == null || savedSessionDir.isEmpty) {
-        status.value = WhatsAppSenderFlutterStatusMessage.qrCodeExpirated;
+        _status.value = WhatsAppSenderFlutterStatusMessage.qrCodeExpirated;
         await close();
         return;
       }
     }
-    qrCode.value = "";
+    _qrCode.value = "";
     for (int i = 0; i < phones.length; i++) {
       try {
         await _sendMessage(phones[i], message);
-        success.value = success.value + 1;
+        _success.value = _success.value + 1;
       } catch (e) {
-        fails.value = fails.value + 1;
+        _fails.value = _fails.value + 1;
       }
     }
-    status.value = WhatsAppSenderFlutterStatusMessage.done;
+    _status.value = WhatsAppSenderFlutterStatusMessage.done;
     await close();
     return;
   }
@@ -65,8 +65,24 @@ class WhatsAppSenderFlutter {
     }
   }
 
+  material.ValueNotifier<String> qrCode() {
+    return _qrCode;
+  }
+
+  material.ValueNotifier<String> status() {
+    return _status;
+  }
+
+  material.ValueNotifier<int> success() {
+    return _success;
+  }
+
+  material.ValueNotifier<int> fails() {
+    return _fails;
+  }
+
   Future<void> _sendMessage(String phone, String message) async {
-    status.value = WhatsAppSenderFlutterStatusMessage.sending;
+    _status.value = WhatsAppSenderFlutterStatusMessage.sending;
     await _page
         .goto('https://web.whatsapp.com/send?phone=$phone&text=$message');
     var onDialog = _page.onDialog.listen((event) {
@@ -97,8 +113,8 @@ class WhatsAppSenderFlutter {
         .evaluate(
             '() => document.querySelector("div[data-ref]").getAttribute("data-ref")')
         .then((qrCodeData) {
-      qrCode.value = qrCodeData;
-      status.value = WhatsAppSenderFlutterStatusMessage.scanQrCode;
+      _qrCode.value = qrCodeData;
+      _status.value = WhatsAppSenderFlutterStatusMessage.scanQrCode;
     });
   }
 
@@ -117,10 +133,10 @@ class WhatsAppSenderFlutter {
   }
 
   void _initializingStatusVariables() {
-    success.value = 0;
-    fails.value = 0;
-    qrCode.value = "";
-    status.value = WhatsAppSenderFlutterStatusMessage.initializing;
+    _success.value = 0;
+    _fails.value = 0;
+    _qrCode.value = "";
+    _status.value = WhatsAppSenderFlutterStatusMessage.initializing;
   }
 }
 

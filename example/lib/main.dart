@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
                 child: Column(
                   children: [
                     ValueListenableBuilder<String>(
-                      valueListenable: whatsAppSenderFlutter.qrCode,
+                      valueListenable: whatsAppSenderFlutter.qrCode(),
                       builder: (context, value, widget) {
                         return value.isEmpty
                             ? const SizedBox()
@@ -45,19 +45,19 @@ class _MyAppState extends State<MyApp> {
                       },
                     ),
                     ValueListenableBuilder<String>(
-                      valueListenable: whatsAppSenderFlutter.status,
+                      valueListenable: whatsAppSenderFlutter.status(),
                       builder: (context, value, widget) {
                         return Text(value);
                       },
                     ),
                     ValueListenableBuilder<int>(
-                      valueListenable: whatsAppSenderFlutter.success,
+                      valueListenable: whatsAppSenderFlutter.success(),
                       builder: (context, value, widget) {
                         return Text("$value success");
                       },
                     ),
                     ValueListenableBuilder<int>(
-                      valueListenable: whatsAppSenderFlutter.fails,
+                      valueListenable: whatsAppSenderFlutter.fails(),
                       builder: (context, value, widget) {
                         return Text("$value fails");
                       },
