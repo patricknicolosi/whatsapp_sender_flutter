@@ -158,7 +158,7 @@ Do not indicate ``` savedSessionDir``` if you want to be asked to scan the qr co
 ```dart
 import 'package:flutter/material.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
-import 'package:whatsapp_sender/whatsapp_sender.dart';
+import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter.dart';
 
 void main() {
   runApp(
@@ -248,6 +248,7 @@ class _MyAppState extends State<MyApp> {
 ```
 ## To Do
 - Send text message ✔️
+- Multi session support ✔️
 - Send image (*coming soon!*)
 
 
