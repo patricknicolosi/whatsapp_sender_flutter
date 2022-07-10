@@ -75,7 +75,7 @@ After you have scanned the code, you can start the sending campaign.
 ```dart
    WhatsAppSenderFlutter whatsAppSenderFlutter = WhatsAppSenderFlutter();
    ...
-   await whatsAppSenderFlutter.sendTo(
+   await whatsAppSenderFlutter.send(
          phones: [ "+391111111", "+391111111", "+391111111"],
          message: "Hello",
    );
@@ -139,7 +139,7 @@ The static variable  ```whatsAppSenderFlutter.fails``` is a ```ValueNotifier```.
 ```dart
    WhatsAppSenderFlutter whatsAppSenderFlutter = WhatsAppSenderFlutter();
    ...
-   await whatsAppSenderFlutter.sendTo(
+   await whatsAppSenderFlutter.send(
          phones: [ "+391111111", "+391111111", "+391111111"],
          message: "Hello",
          savedSessionDir: "./userData"
@@ -225,7 +225,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
           );
-          await whatsAppSenderFlutter.sendTo(
+          await whatsAppSenderFlutter.send(
             phones: [
               "+391111111111",
               "+391111111111",

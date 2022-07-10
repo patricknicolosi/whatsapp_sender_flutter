@@ -30,3 +30,6 @@ Added multi session support
 
 ## 0.1.0
 Bug fix
+
+## 0.1.1
+Reformat library

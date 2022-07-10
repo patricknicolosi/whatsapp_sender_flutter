@@ -67,7 +67,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
           );
-          await whatsAppSenderFlutter.sendTo(
+          await whatsAppSenderFlutter.send(
             phones: [
               "+391111111111",
               "+391111111111",
