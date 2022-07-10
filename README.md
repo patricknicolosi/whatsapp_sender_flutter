@@ -21,17 +21,6 @@ import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter.dart';
 
 ## Configuration
 For the first usage, wait for the automatic download of the ```.local-chromium``` folder in your project root. Without this folder the package will not work,this is because this package is based on [puppeteer](https://github.com/xvrh/puppeteer-dart).
-
-If automatic download doent't start
-
-1. Download .zip file
-  - **Mac** download from [here](https://storage.googleapis.com/chromium-browser-snapshots/Mac/1011831/chrome-mac.zip)
-  - **Windows** download from [here](https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/1011831/chrome-win.zip)
-  - **Linux** download from [here](https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/1011831/chrome-linux.zip)
-
-2. Extract .zip file and move content in the ```.local-chromium``` (create it if it doesn't exist
-) folder manually in your project root.
-
 ## Basic usage
 
 The process for sending messages is like for WhatsApp Web:
