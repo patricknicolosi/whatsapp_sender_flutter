@@ -33,7 +33,11 @@ class WhatsAppSenderFlutter {
   }
 
   Future close() async {
-    await _browser.close();
+    try {
+      await _browser.close();
+    } catch (e) {
+      log(e.toString());
+    }
   }
 
   void _initializingStatusVariables() {

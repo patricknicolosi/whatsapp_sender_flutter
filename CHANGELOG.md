@@ -33,3 +33,6 @@ Bug fix
 
 ## 0.1.1
 Reformat library
+
+## 0.1.2
+Bug fix
