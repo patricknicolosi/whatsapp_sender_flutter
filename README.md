@@ -1,5 +1,11 @@
 # WhatsApp Sender Flutter
 
+[![Flutter](https://github.com/patricknicolosi/whatsapp_sender_flutter/actions/workflows/flutter-ci.yml/badge.svg?branch=master)](https://github.com/patricknicolosi/whatsapp_sender_flutter/actions/workflows/flutter-ci.yml)
+[![pub package](https://img.shields.io/pub/v/whatsapp_sender_flutter.svg)](https://pub.dev/packages/whatsapp_sender_flutter)
+[![pub points](https://img.shields.io/pub/points/whatsapp_sender_flutter?logo=dart)](https://pub.dev/packages/whatsapp_sender_flutter/score)
+[![pub popularity](https://img.shields.io/pub/popularity/whatsapp_sender_flutter?logo=dart)](https://pub.dev/packages/whatsapp_sender_flutter/score)
+[![pub likes](https://img.shields.io/pub/likes/whatsapp_sender_flutter?logo=dart)](https://pub.dev/packages/whatsapp_sender_flutter/score)
+
 WhatsApp Sender Flutter is an unofficial API for Flutter to send bulk messages in Whatsapp. It's not recommended using it in your company or for marketing purpose.
 
 <a href="https://www.buymeacoffee.com/patrickNicT" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Book" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
