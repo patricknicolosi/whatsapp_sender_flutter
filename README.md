@@ -1,6 +1,4 @@
 # WhatsApp Sender Flutter
-
-[![Flutter](https://github.com/patricknicolosi/whatsapp_sender_flutter/actions/workflows/flutter-ci.yml/badge.svg?branch=master)](https://github.com/patricknicolosi/whatsapp_sender_flutter/actions/workflows/flutter-ci.yml)
 [![pub package](https://img.shields.io/pub/v/whatsapp_sender_flutter.svg)](https://pub.dev/packages/whatsapp_sender_flutter)
 [![pub points](https://img.shields.io/pub/points/whatsapp_sender_flutter?logo=dart)](https://pub.dev/packages/whatsapp_sender_flutter/score)
 [![pub popularity](https://img.shields.io/pub/popularity/whatsapp_sender_flutter?logo=dart)](https://pub.dev/packages/whatsapp_sender_flutter/score)
