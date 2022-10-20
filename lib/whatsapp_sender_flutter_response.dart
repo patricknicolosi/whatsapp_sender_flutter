@@ -1,4 +1,4 @@
-import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter_response_message.dart';
+import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter_response_message_values.dart';
 
 class WhatsAppSenderFlutterResponse {
   String message = WhatsAppSenderFlutterResponseMessageValues.initializing;
