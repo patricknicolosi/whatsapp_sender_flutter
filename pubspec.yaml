@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   
-  puppeteer: ^2.11.0
+  puppeteer: ^2.14.0
 
 
 dev_dependencies:

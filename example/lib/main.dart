@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
-import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter.dart';
+import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter_response.dart';
+import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter_response_message_values.dart';
 
 void main() {
   runApp(
@@ -30,50 +31,29 @@ class _MyAppState extends State<MyApp> {
             context: context,
             builder: (context) => AlertDialog(
               content: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    ValueListenableBuilder<String>(
-                      valueListenable: whatsAppSenderFlutter.qrCode(),
-                      builder: (context, value, widget) {
-                        return value.isEmpty
-                            ? const SizedBox()
-                            : PrettyQr(
-                                size: 300,
-                                data: value,
-                                roundEdges: true,
-                              );
-                      },
-                    ),
-                    ValueListenableBuilder<String>(
-                      valueListenable: whatsAppSenderFlutter.status(),
-                      builder: (context, value, widget) {
-                        return Text(value);
-                      },
-                    ),
-                    ValueListenableBuilder<int>(
-                      valueListenable: whatsAppSenderFlutter.success(),
-                      builder: (context, value, widget) {
-                        return Text("$value success");
-                      },
-                    ),
-                    ValueListenableBuilder<int>(
-                      valueListenable: whatsAppSenderFlutter.fails(),
-                      builder: (context, value, widget) {
-                        return Text("$value fails");
-                      },
-                    ),
-                  ],
+                child: StreamBuilder<WhatsAppSenderFlutterResponse>(
+                  stream: whatsAppSenderFlutter.send(
+                    phones: [
+                      "+391111111111",
+                      "+391111111111",
+                      "+391111111111",
+                    ],
+                    message: "Hello",
+                  ),
+                  builder: (context, snapshot) => snapshot.hasData
+                      ? Column(
+                          children: [
+                            Text(snapshot.data?.message ?? ""),
+                            Text(snapshot.data?.qrCode ?? ""),
+                            PrettyQr(
+                                data: snapshot.data?.qrCode ?? "", size: 200),
+                            Text((snapshot.data?.success ?? 0).toString()),
+                          ],
+                        )
+                      : const SizedBox(),
                 ),
               ),
             ),
-          );
-          await whatsAppSenderFlutter.send(
-            phones: [
-              "+391111111111",
-              "+391111111111",
-              "+391111111111",
-            ],
-            message: "Hello",
           );
         },
       ),
