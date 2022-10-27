@@ -8,6 +8,9 @@ WhatsApp Sender Flutter is an unofficial API for Flutter to send bulk messages i
 
 <a href="https://www.buymeacoffee.com/patrickNicT" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Book" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
+Thanks to [rohitsangwan01](https://github.com/rohitsangwan01) for reference!
+
+
 ## Getting Started
 In the `pubspec.yaml` of your flutter project, add the following dependency:
 
@@ -27,7 +30,6 @@ import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter.dart';
 For the first usage, wait for the automatic download of the ```.local-chromium``` folder in your project root. Without this folder the package will not work,this is because this package is based on [puppeteer](https://github.com/xvrh/puppeteer-dart).
 ## Basic usage
 
-Thanks to [rohitsangwan01](https://github.com/rohitsangwan01) for reference!
 
 The process for sending messages is like for WhatsApp Web:
 
