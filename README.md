@@ -43,7 +43,6 @@ After you have scanned the code, you can start the sending campaign.
 **All phones must contain the international prefix!**
 
 ```dart
-   ...
    await WhatsAppSenderFlutter.send(
          phones: [ "391111111", "391111111", "391111111"],
          message: "Hello",
@@ -98,9 +97,7 @@ To know in detail the possible states of ```WhatsAppSenderFlutterStatus```, ```W
 ### Save your session
 
 ```dart
-   WhatsAppSenderFlutter whatsAppSenderFlutter = WhatsAppSenderFlutter();
-   ...
-   await whatsAppSenderFlutter.send(
+   await WhatsAppSenderFlutter.send(
          phones: [ "391111111", "391111111", "391111111"],
          message: "Hello",
          savedSessionDir: "./userData"
