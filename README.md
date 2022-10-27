@@ -27,6 +27,8 @@ import 'package:whatsapp_sender_flutter/whatsapp_sender_flutter.dart';
 For the first usage, wait for the automatic download of the ```.local-chromium``` folder in your project root. Without this folder the package will not work,this is because this package is based on [puppeteer](https://github.com/xvrh/puppeteer-dart).
 ## Basic usage
 
+Thanks to [rohitsangwan01](https://github.com/rohitsangwan01) for reference!
+
 The process for sending messages is like for WhatsApp Web:
 
 1. Scan the qr code
