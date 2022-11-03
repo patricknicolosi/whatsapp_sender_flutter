@@ -72,7 +72,6 @@ New functions for listen changes:
 4. ```onError(WhatsAppSenderFlutterErrorMessage errorMessage)```, use this feature to catch errors while sending
 
 ```dart
-   ...
    await WhatsAppSenderFlutter.send(
         phones: [ "391111111", "391111111", "391111111"],
         message: "Hello",
