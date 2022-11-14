@@ -113,7 +113,7 @@ Do not indicate ``` savedSessionDir``` if you want to be asked to scan the qr co
 - Send text message ✔️
 - Multi session support ✔️
 - Send files ✔️
-- Native Android support
+- Native mobile support (Android, IOS)
 
 
 ## License
